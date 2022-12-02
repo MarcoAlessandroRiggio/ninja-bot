@@ -191,8 +191,6 @@ jobs:
             --s3-bucket ${TESTING_ARTIFACTS_BUCKET} \
             --no-fail-on-empty-changeset \
             --role-arn ${TESTING_CLOUDFORMATION_EXECUTION_ROLE}
-          sam publish --template packaged-testing.yaml \
-            --region ${TESTING_REGION}
   publish-version:
     if: github.ref == 'refs/heads/master'
     needs: [ deploy-testing ]
