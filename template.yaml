@@ -67,3 +67,6 @@ Outputs:
 Metadata:
   AWS::ServerlessRepo::Application:
     SemanticVersion: 0.0.1
+    author: Marco Riggio
+    description: super ninja telegram bot app
+    name: ninja-bot
