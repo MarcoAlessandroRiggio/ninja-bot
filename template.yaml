@@ -44,7 +44,7 @@ Resources:
         - Name: Resource
           Value: !Sub "${getByIdFunction}:live"
         - Name: FunctionName
-          Value: !Ref HelloWorldFunction
+          Value: !Ref getByIdFunction
       EvaluationPeriods: 2
       MetricName: Errors
       Namespace: AWS/Lambda
