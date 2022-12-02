@@ -3,7 +3,7 @@ Description: >-
   ninja-bot
 
 Transform:
-- AWS::Serverless-2016-10-31
+  - AWS::Serverless-2016-10-31
 
 Resources:
 
@@ -29,6 +29,7 @@ Resources:
           Properties:
             Path: /{id}
             Method: GET
+      AutoPublishAlias: live
       DeploymentPreference:
         Type: Linear10PercentEvery1Minute
         Alarms:
