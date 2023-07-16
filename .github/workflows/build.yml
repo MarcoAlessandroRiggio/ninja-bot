@@ -1,11 +1,14 @@
-name: Java CI
+name: CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - develop
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 17
