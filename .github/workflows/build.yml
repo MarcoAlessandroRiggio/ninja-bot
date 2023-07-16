@@ -30,7 +30,6 @@ jobs:
               -Dsonar.organization=marco-riggio \
               -Dsonar.projectKey=ninja-bot \
               -Dsonar.host.url=https://sonarcloud.io \
-              -Dsonar.coverage.jacoco.xmlReportPaths=${project.build.directory}/site/jacoco/jacoco.xml \
               -Dsonar.login=${{ secrets.SONAR_TOKEN }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
