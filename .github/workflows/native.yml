@@ -29,8 +29,6 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Build artifact
         run: mvn --batch-mode --update-snapshots -Pnative package
-      - name: Copy artifact
-        run: mkdir staging && cp target/ninjacli staging
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
