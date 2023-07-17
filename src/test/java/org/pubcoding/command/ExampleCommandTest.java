@@ -1,7 +1,6 @@
-package org.pubcoding.command.command;
+package org.pubcoding.command;
 
 import org.junit.jupiter.api.Test;
-import org.pubcoding.command.command.ExampleCommand;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

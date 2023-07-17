@@ -1,4 +1,4 @@
-package org.pubcoding.command.command;
+package org.pubcoding.command;
 
 import lombok.extern.slf4j.Slf4j;
 import picocli.CommandLine;
@@ -7,12 +7,11 @@ import picocli.CommandLine.Command;
 import java.util.concurrent.Callable;
 
 @Command
-@Slf4j
 public class ExampleCommand implements Callable<Integer> {
 
     @Override
     public Integer call() {
-        log.info("Command invoked");
+        System.out.println("Command invoked");
         return 0;
     }
 
