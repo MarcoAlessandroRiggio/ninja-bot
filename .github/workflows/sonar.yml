@@ -20,7 +20,7 @@ jobs:
           distribution: 'temurin'
       - name: Analyze with SonarCloud
         run: |
-          mvn --batch-mode --update-snapshots clean verify sonar:sonar \
+          mvn --batch-mode --update-snapshots -Psonar clean verify sonar:sonar \
             -Dsonar.organization=marco-riggio \
             -Dsonar.projectKey=ninja-bot \
             -Dsonar.host.url=https://sonarcloud.io \
