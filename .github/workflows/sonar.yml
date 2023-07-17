@@ -18,6 +18,12 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+      - name: Cache the Maven packages to speed up build
+        uses: actions/cache@v1
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
       - name: Analyze with SonarCloud
         run: |
           mvn --batch-mode --update-snapshots -Psonar clean verify sonar:sonar \
