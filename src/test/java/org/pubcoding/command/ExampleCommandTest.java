@@ -1,4 +1,4 @@
-package command;
+package org.pubcoding.command;
 
 import org.junit.jupiter.api.Test;
 
