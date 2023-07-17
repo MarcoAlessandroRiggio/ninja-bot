@@ -1,6 +1,5 @@
 package org.pubcoding.command;
 
-import lombok.extern.slf4j.Slf4j;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 
