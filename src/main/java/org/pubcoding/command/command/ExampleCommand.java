@@ -1,4 +1,4 @@
-package command;
+package org.pubcoding.command.command;
 
 import lombok.extern.slf4j.Slf4j;
 import picocli.CommandLine;
