@@ -25,7 +25,7 @@
         <lombok.version>1.18.28</lombok.version>
         <native.maven.plugin.version>0.9.23</native.maven.plugin.version>
         <mainClass>org.pubcoding.command.ExampleCommand</mainClass>
-        <imageName>ninja-bot</imageName>
+        <imageName>ninjacli</imageName>
     </properties>
 
     <dependencies>
