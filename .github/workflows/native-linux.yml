@@ -1,4 +1,4 @@
-name: Native Windows
+name: Native Linux
 
 on:
   push:
@@ -9,6 +9,6 @@ jobs:
   native-image:
     uses: MarcoAlessandroRiggio/ninja-bot/.github/workflows/native.yml@master
     with:
-      os: windows-latest
-      target_name: ninjacli-windows
-      target_path: target/ninjacli.exe
+      os: ubuntu-latest
+      target_name: ninjacli-linux
+      target_path: target/ninjacli
