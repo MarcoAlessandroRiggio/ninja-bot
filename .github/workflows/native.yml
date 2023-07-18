@@ -12,6 +12,12 @@ jobs:
       matrix:
         os: [ ubuntu-latest, macos-latest, windows-latest ]
     steps:
+      - name: Identify OS
+        id: split_os
+        uses: jungwinter/split@v2
+        with:
+           msg: ${{ matrix.os }}
+           separator: '-'
       - name: Checkout
         uses: actions/checkout@v3
         with:
@@ -29,9 +35,11 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Build artifact
         run: mvn --batch-mode --update-snapshots -Pnative package
+      - name: check artifact
+        run: ls target
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
-          name: ninjacli
-          path: target/ninjacli
+          name: ninjacli-${{steps.split_os.outputs._0}}
+          path: target/ninjacli${{ matrix.os == 'windows-latest' && '.exe' || '' }}
 
