@@ -1,4 +1,4 @@
-name: Native
+name: Native MacOS
 
 on:
   push:
@@ -6,30 +6,10 @@ on:
       - master
 
 jobs:
-  build:
-    runs-on: macos-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: Set up GraalVM
-        uses: graalvm/setup-graalvm@v1
-        with:
-          java-version: '17'
-          distribution: 'graalvm'
-      - name: Cache the Maven packages to speed up build
-        uses: actions/cache@v1
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2
-      - name: Build artifact
-        run: mvn --batch-mode --update-snapshots -Pnative package
-      - name: check artifact
-        run: ls target
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: ninjacli-macos
-          path: target/ninjacli
+  native-image:
+    uses: MarcoAlessandroRiggio/ninja-bot/.github/workflows/native.yml@master
+    with:
+      os: macos-latest
+      target_name: ninjacli-macos
+      target_path: target/ninjacli
+      

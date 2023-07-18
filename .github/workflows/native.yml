@@ -1,13 +1,24 @@
-name: Native
+name: "Produce Native Image"
 
 on:
-  push:
-    branches:
-      - master
+  workflow_call:
+    inputs:
+      os:
+        required: true
+        description: "OS to use for the build"
+        type: string
+      target_name:
+        required: true
+        description: "Target name to produce"
+        type: string
+      target_path:
+        required: true
+        description: "Path where find the artifact"
+        type: string
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  package:
+    runs-on: ${{ inputs.os }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -26,10 +37,9 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Build artifact
         run: mvn --batch-mode --update-snapshots -Pnative package
-      - name: check artifact
-        run: ls target
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
-          name: ninjacli-linux
-          path: target/ninjacli
+          name: ${{ inputs.target_name }}
+          path: ${{ inputs.target_path }}
+
