@@ -24,7 +24,7 @@
         <picocli.version>4.7.4</picocli.version>
         <lombok.version>1.18.28</lombok.version>
         <native.maven.plugin.version>0.9.23</native.maven.plugin.version>
-        <mainClass>org.pubcoding.command.ExampleCommand</mainClass>
+        <mainClass>org.pubcoding.NinjaCli</mainClass>
         <imageName>ninjacli</imageName>
     </properties>
 
@@ -34,7 +34,6 @@
             <artifactId>picocli</artifactId>
             <version>${picocli.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -59,7 +58,6 @@
             <version>${sl4j.version}</version>
             <scope>runtime</scope>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -101,7 +99,6 @@
                     </execution>
                 </executions>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -121,9 +118,11 @@
                             <version>${picocli.version}</version>
                         </path>
                     </annotationProcessorPaths>
+                    <compilerArgs>
+                        <arg>-Aproject=${project.groupId}/${project.artifactId}</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -137,7 +136,6 @@
                     </archive>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -161,7 +159,6 @@
                     </descriptorRefs>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 
