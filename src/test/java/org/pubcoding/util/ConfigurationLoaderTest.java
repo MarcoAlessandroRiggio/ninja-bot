@@ -21,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class ConfigurationLoaderTest {
+class ConfigurationLoaderTest {
     @Mock private ObjectMapper mapper;
     @Mock private File file;
     private ConfigurationLoader sut;
