@@ -1,24 +1,11 @@
 package org.pubcoding;
 
-import org.pubcoding.command.ExampleCommand;
-import org.pubcoding.command.ExampleSecondCommand;
-import picocli.CommandLine;
-import picocli.CommandLine.Command;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.concurrent.Callable;
-
-@Command(subcommands = {ExampleCommand.class, ExampleSecondCommand.class})
-public class NinjaCli implements Callable<Integer> {
-
-    @Override
-    public Integer call() {
-        System.out.println("Hi");
-        return 0;
+@SpringBootApplication
+public class NinjaCli {
+    public static void main(String[] args) {
+        SpringApplication.run(NinjaCli.class, args);
     }
-
-    public static void main(String... args) {
-        var exitCode = new CommandLine(new NinjaCli()).execute(args);
-        System.exit(exitCode);
-    }
-
 }
