@@ -1,23 +1,19 @@
 package org.pubcoding.command;
 
-import picocli.CommandLine;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 import picocli.CommandLine.Command;
 
 import java.util.concurrent.Callable;
-
-@Command
+@Component
+@Command(subcommands = {ExampleSecondCommand.class, ShowSpellCommand.class})
+@Slf4j
 public class ExampleCommand implements Callable<Integer> {
 
     @Override
     public Integer call() {
-        System.out.println("Command invoked");
+        log.info("example invoked");
         return 0;
-    }
-
-    public static void main(String... args) {
-        var exitCode = new CommandLine(new ExampleCommand())
-                .execute(args);
-        System.exit(exitCode);
     }
 
 }
