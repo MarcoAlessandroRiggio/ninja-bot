@@ -1,7 +1,5 @@
 package org.pubcoding.model;
 
-import lombok.RequiredArgsConstructor;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
