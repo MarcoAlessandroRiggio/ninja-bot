@@ -36,7 +36,7 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
       - name: Build artifact
-        run: mvn --batch-mode --update-snapshots -Pnative package
+        run: mvn --batch-mode --update-snapshots -Pnative native:compile
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
