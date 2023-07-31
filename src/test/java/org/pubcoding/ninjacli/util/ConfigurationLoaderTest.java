@@ -1,7 +1,6 @@
-package org.pubcoding.util;
+package org.pubcoding.ninjacli.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import mockit.MockUp;
@@ -10,8 +9,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.pubcoding.model.Configuration;
-import org.pubcoding.model.Errors;
+import org.pubcoding.ninjacli.model.Configuration;
+import org.pubcoding.ninjacli.model.Errors;
 
 import java.io.File;
 import java.io.IOException;

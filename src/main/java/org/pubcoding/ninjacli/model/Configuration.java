@@ -1,4 +1,4 @@
-package org.pubcoding.model;
+package org.pubcoding.ninjacli.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

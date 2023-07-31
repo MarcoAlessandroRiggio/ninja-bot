@@ -1,4 +1,4 @@
-package org.pubcoding.command;
+package org.pubcoding.ninjacli.command;
 
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;

@@ -1,10 +1,17 @@
-package org.pubcoding.model;
+package org.pubcoding.ninjacli.model;
+
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity(name = "Incantesimi")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
 public class Enchantment {
 
     @Id private Integer id;
@@ -19,6 +26,5 @@ public class Enchantment {
     @Column private String savingThrow;
     @Column private String spellResistance;
     @Column private String description;
-
 
 }

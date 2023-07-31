@@ -1,12 +1,12 @@
-package org.pubcoding.util;
+package org.pubcoding.ninjacli.util;
 
 import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.snakeyaml.error.MarkedYAMLException;
 import lombok.AllArgsConstructor;
 import lombok.extern.java.Log;
-import org.pubcoding.model.Configuration;
-import org.pubcoding.model.Errors;
+import org.pubcoding.ninjacli.model.Configuration;
+import org.pubcoding.ninjacli.model.Errors;
 
 import java.io.File;
 import java.io.IOException;

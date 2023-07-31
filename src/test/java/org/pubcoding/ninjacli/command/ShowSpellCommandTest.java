@@ -1,4 +1,4 @@
-package org.pubcoding.command;
+package org.pubcoding.ninjacli.command;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package org.pubcoding.command;
+package org.pubcoding.ninjacli.command;
 
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +8,7 @@ class ExampleCommandTest {
 
     @Test
     void oneCommandToExecute() {
-        var command = new ExampleCommand();
+        var command = new ExampleCommand(null);
         var result = command.call();
         assertEquals(0, result);
     }
