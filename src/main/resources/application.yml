@@ -3,7 +3,7 @@ spring:
     log-startup-info: false
     banner-mode: off
   datasource:
-    url: jdbc:sqlite:/Users/marcoriggio/develop/ninjabot/src/main/resources/dnd.db?cache=shared
+    url: jdbc:sqlite:/Users/marcoriggio/develop/ninjabot/src/main/resources/dnd.db
     driver-class-name: org.sqlite.JDBC
   jpa:
-    database-platform: org.hibernate.dialect.SQLiteDialect
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
