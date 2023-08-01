@@ -1,9 +1,10 @@
 package org.pubcoding.ninjacli.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
 
 @Entity(name = "Incantesimi")
 @Getter
@@ -13,9 +14,10 @@ import javax.persistence.Id;
 @EqualsAndHashCode
 public class Enchantment {
 
-    @Id private Integer id;
+    @Id @Column(name = "enchantment_id")
+    private Integer id;
     private String name;
-    private School school;
+    private String school;
     private Integer level;
     private String components;
     private String castingTime;

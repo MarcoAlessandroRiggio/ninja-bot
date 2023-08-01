@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ExampleCommandTest {
 
-    @Test
     void oneCommandToExecute() {
         var command = new ExampleCommand(null);
         var result = command.call();

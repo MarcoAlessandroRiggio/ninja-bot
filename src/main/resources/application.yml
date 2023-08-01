@@ -7,3 +7,9 @@ spring:
     driver-class-name: org.sqlite.JDBC
   jpa:
     database-platform: org.hibernate.community.dialect.SQLiteDialect
+logging:
+  level:
+    root: off
+    org.pubcoding: info
+  pattern:
+    console: "%msg%n"
