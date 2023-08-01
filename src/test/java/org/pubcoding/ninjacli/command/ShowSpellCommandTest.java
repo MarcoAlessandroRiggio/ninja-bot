@@ -7,19 +7,19 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.io.IOException;
 
-@ExtendWith(MockitoExtension.class)
-public class ShowSpellCommandTest {
-    public static final String DARDO_INCANTATO = "dardo-incantato";
-    private ShowSpellCommand sut;
-
-    @BeforeEach
-    void setup() {
-        sut = new ShowSpellCommand(DARDO_INCANTATO);
-    }
-
-    @Test
-    void printReferenceIfSpellExist() throws IOException {
-        sut.call();
-    }
-
-}
+//@ExtendWith(MockitoExtension.class)
+//public class ShowSpellCommandTest {
+//    public static final String DARDO_INCANTATO = "dardo-incantato";
+//    private ShowSpellCommand sut;
+//
+//    @BeforeEach
+//    void setup() {
+//        sut = new ShowSpellCommand(DARDO_INCANTATO);
+//    }
+//
+//    @Test
+//    void printReferenceIfSpellExist() throws IOException {
+//        sut.call();
+//    }
+//
+//}

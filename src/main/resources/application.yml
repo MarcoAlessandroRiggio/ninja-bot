@@ -3,10 +3,12 @@ spring:
     log-startup-info: false
     banner-mode: off
   datasource:
-    url: jdbc:sqlite:/Users/marcoriggio/develop/ninjabot/src/main/resources/dnd.db
+    url: jdbc:sqlite:/home/amrod/develop/ninja-bot/src/main/resources/dnd.db
     driver-class-name: org.sqlite.JDBC
   jpa:
-    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.community.dialect.SQLiteDialect
 logging:
   level:
     root: off
