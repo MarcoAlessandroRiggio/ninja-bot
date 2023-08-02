@@ -1,6 +1,6 @@
-package org.pubcoding.runner;
+package org.pubcoding.ninjacli.runner;
 
-import org.pubcoding.command.ExampleCommand;
+import org.pubcoding.ninjacli.command.ExampleCommand;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.ExitCodeGenerator;
 import org.springframework.stereotype.Component;
