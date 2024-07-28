@@ -15,9 +15,8 @@ class Mkm:
     def _authenticate(self):
         mkm_configuration = config.get_config()["mkm"]
         response = requests.Session().post(url=f"{_URL}/PostGetAction/User_Login", data={
-            "referalPage": "/en/Magic",
-            "username": "amrodmagno",
-            "userPassword": "Adgjl456*"
+            "username": mkm_configuration["username"],
+            "userPassword": mkm_configuration["password"]
         })
         print(response.status_code)
         # print(response.text)
