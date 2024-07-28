@@ -7,9 +7,7 @@ from ninja_cli import (
 
 CONFIG_DIR_PATH = Path.home() / f".{__app_name__}"
 CONFIG_FILE_PATH = CONFIG_DIR_PATH / "config.ini"
-DEFAULT_CONFIG = {
-    "mkm": {}
-}
+DEFAULT_CONFIG = {}
 
 
 def init_app() -> int:
