@@ -2,12 +2,12 @@ from typing import Optional, Annotated
 
 import typer
 
-from .commands import mkm
+from .commands import command_a
 from . import __app_name__, __version__, ERRORS
 from .utils import config
 
 app = typer.Typer()
-app.add_typer(mkm.app, name="mkm", help="Utility to manage mkm account")
+app.add_typer(command_a.app, name="command_a", help="command_a")
 
 
 def _version_callback(value: bool) -> None:
