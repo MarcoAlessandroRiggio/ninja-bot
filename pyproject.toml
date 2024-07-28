@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "ninja-cli"
+version = "0.0.1"
+dependencies = [
+    "typer",
+    "requests"
+]
+[project.optional-dependencies]
+test = [
+    "pytest"
+]
+[project.scripts]
+ninja-cli = "ninja_cli.__main__:main"
