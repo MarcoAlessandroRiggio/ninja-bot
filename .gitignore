@@ -1,0 +1,4 @@
+.idea
+.venv
+build
+ninja_cli.egg-info
