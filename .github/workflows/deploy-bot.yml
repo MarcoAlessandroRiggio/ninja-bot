@@ -22,6 +22,7 @@ jobs:
 
       - name: Compile Cdk
         run: |
+          ls -la
           cd ninja_bot
           npm run build
 
