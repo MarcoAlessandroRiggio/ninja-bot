@@ -1,4 +1,6 @@
 import json
+import os
+
 import requests
 from aws_lambda_powertools.utilities import parameters
 
@@ -16,7 +18,7 @@ def lambda_handler(event, context):
         short_url=payload.json()['result_url']
         print("The short url is : {}".format(short_url))
         chat_id=body['message']['chat']['id']
-        telegram_token =parameters.get_secret(secret_name)
+        telegram_token =parameters.get_secret(os.getenv('TELEGRAM_SECRET'))
         url = f'https://api.telegram.org/bot{telegram_token}/sendMessage'
 
         payload = {
