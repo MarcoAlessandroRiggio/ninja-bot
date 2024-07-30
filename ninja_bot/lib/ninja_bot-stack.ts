@@ -34,7 +34,7 @@ export class NinjaBotStack extends Stack {
     })
 
 
-    const endpoint = api.root.addResource("scan")
+    const endpoint = api.root.addResource("ninja-bot")
     const endpointMethod = endpoint.addMethod("POST", new apigateway.LambdaIntegration(lambda_backend))
 
   }
