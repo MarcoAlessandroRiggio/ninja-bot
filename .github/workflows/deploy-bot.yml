@@ -7,6 +7,7 @@ on:
 jobs:
   aws_cdk:
     runs-on: ubuntu-latest
+    environment: development
     steps:
       - name: Assume Role
         uses: youyo/awscredswrap@master
