@@ -20,12 +20,6 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: 'ap-northeast-1'
 
-      - name: Compile Cdk
-        run: |
-          ls -la
-          cd ninja_bot
-          npm run build
-
       - name: Deploy
         uses: youyo/aws-cdk-github-actions@v2
         with:
