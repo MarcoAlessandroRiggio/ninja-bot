@@ -16,7 +16,7 @@ export class NinjaBotStack extends Stack {
         removalPolicy: RemovalPolicy.DESTROY
       }
     )
-    layer = lambda.LayerVersion.fromLayerVersionArn(
+    const layer = lambda.LayerVersion.fromLayerVersionArn(
       this, 'Powertools',
       "arn:aws:lambda:{region}:017000801446:layer:AWSLambdaPowertoolsPythonV2:17"
     )
