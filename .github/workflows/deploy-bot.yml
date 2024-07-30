@@ -23,4 +23,5 @@ jobs:
       - name: Deploy
         uses: youyo/aws-cdk-github-actions@v2
         with:
+          working_dir: 'ninja_bot'
           cdk_subcommand: 'deploy'
