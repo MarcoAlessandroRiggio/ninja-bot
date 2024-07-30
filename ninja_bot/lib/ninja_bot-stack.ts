@@ -16,9 +16,13 @@ export class NinjaBotStack extends Stack {
         removalPolicy: RemovalPolicy.DESTROY
       }
     )
-    const layer = lambda.LayerVersion.fromLayerVersionArn(
+    const powertools = lambda.LayerVersion.fromLayerVersionArn(
       this, 'Powertools',
       "arn:aws:lambda:eu-central-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:17"
+    )
+    const requests = lambda.LayerVersion.fromLayerVersionArn(
+      this, 'Requests',
+      "arn:aws:lambda:eu-central-1:770693421928:layer:Klayers-p312-requests:6"
     )
 
     const lambda_backend = new lambda.Function(this, "NinjaBot", {
@@ -26,7 +30,7 @@ export class NinjaBotStack extends Stack {
       handler: "app.lambda_handler",
       code: lambda.Code.fromAsset("src"),
       tracing: lambda.Tracing.ACTIVE,
-      layers: [ layer ],
+      layers: [ powertools, requests ],
       environment: {
         DYNAMODB: dynamodb_table.tableName,
         TELEGRAM_SECRET: secret.secretName
