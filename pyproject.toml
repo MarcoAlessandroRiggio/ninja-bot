@@ -12,5 +12,8 @@ dependencies = [
 test = [
     "pytest"
 ]
+[tool.setuptools.package-dir]
+mypkg = "ninja_cli"
+
 [project.scripts]
 ninja-cli = "ninja_cli.__main__:main"
