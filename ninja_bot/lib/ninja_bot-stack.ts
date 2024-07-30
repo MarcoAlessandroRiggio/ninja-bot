@@ -18,7 +18,7 @@ export class NinjaBotStack extends Stack {
     )
     const layer = lambda.LayerVersion.fromLayerVersionArn(
       this, 'Powertools',
-      "arn:aws:lambda:{region}:017000801446:layer:AWSLambdaPowertoolsPythonV2:17"
+      "arn:aws:lambda:eu-central-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:17"
     )
 
     const lambda_backend = new lambda.Function(this, "NinjaBot", {
