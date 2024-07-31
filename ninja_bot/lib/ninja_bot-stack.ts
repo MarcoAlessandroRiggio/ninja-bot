@@ -6,6 +6,10 @@ import * as lambda from 'aws-cdk-lib/aws-lambda'
 import * as secretsmanager from 'aws-cdk-lib/aws-secretsmanager';
 
 export class NinjaBotStack extends Stack {
+  LAYERS_ARN = [
+    "arn:aws:lambda:eu-central-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:17",
+    "arn:aws:lambda:eu-central-1:770693421928:layer:Klayers-p311-requests:9"
+  ]
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
@@ -16,21 +20,17 @@ export class NinjaBotStack extends Stack {
         removalPolicy: RemovalPolicy.DESTROY
       }
     )
-    const powertools = lambda.LayerVersion.fromLayerVersionArn(
-      this, 'Powertools',
-      "arn:aws:lambda:eu-central-1:017000801446:layer:AWSLambdaPowertoolsPythonV2:17"
-    )
-    const requests = lambda.LayerVersion.fromLayerVersionArn(
-      this, 'Requests',
-      "arn:aws:lambda:eu-central-1:770693421928:layer:Klayers-p311-requests:9"
-    )
+
+    const layers = this.LAYERS_ARN
+      .map((arn, index) => lambda.LayerVersion.fromLayerVersionArn(this, 'Layer' + index, arn))
+
 
     const lambda_backend = new lambda.Function(this, "NinjaBot", {
       runtime: lambda.Runtime.PYTHON_3_11,
       handler: "app.lambda_handler",
       code: lambda.Code.fromAsset("src"),
       tracing: lambda.Tracing.ACTIVE,
-      layers: [ powertools, requests ],
+      layers: layers,
       environment: {
         DYNAMODB: dynamodb_table.tableName,
         TELEGRAM_SECRET: secret.secretName
