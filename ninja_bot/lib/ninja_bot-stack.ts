@@ -24,7 +24,6 @@ export class NinjaBotStack extends Stack {
     const layers = this.LAYERS_ARN
       .map((arn, index) => lambda.LayerVersion.fromLayerVersionArn(this, 'Layer' + index, arn))
 
-
     const lambda_backend = new lambda.Function(this, "NinjaBot", {
       runtime: lambda.Runtime.PYTHON_3_11,
       handler: "app.lambda_handler",
@@ -46,8 +45,9 @@ export class NinjaBotStack extends Stack {
         tracingEnabled: true
       },
     })
-    const endpoint = api.root.addResource("ninja-bot")
-    const endpointMethod = endpoint.addMethod("POST", new apigateway.LambdaIntegration(lambda_backend))
+    const endpoint = api.root
+      .addResource("ninja-bot")
+      .addMethod("POST", new apigateway.LambdaIntegration(lambda_backend))
 
   }
 }
