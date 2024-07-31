@@ -22,11 +22,11 @@ export class NinjaBotStack extends Stack {
     )
     const requests = lambda.LayerVersion.fromLayerVersionArn(
       this, 'Requests',
-      "arn:aws:lambda:eu-central-1:770693421928:layer:Klayers-p312-requests:6"
+      "arn:aws:lambda:eu-central-1:770693421928:layer:Klayers-p311-requests:9"
     )
 
     const lambda_backend = new lambda.Function(this, "NinjaBot", {
-      runtime: lambda.Runtime.PYTHON_3_12,
+      runtime: lambda.Runtime.PYTHON_3_11,
       handler: "app.lambda_handler",
       code: lambda.Code.fromAsset("src"),
       tracing: lambda.Tracing.ACTIVE,
